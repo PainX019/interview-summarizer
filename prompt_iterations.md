@@ -1,186 +1,307 @@
 # Prompt Iterations Log
 
 ## Overview
-This document logs the 3 prompt iterations used to develop the interview transcript summarizer.
-Each iteration was tested against both sample transcripts to ensure the prompt generalizes well.
+This document logs the 3 prompt iterations used to develop the interview 
+transcript summarizer. Each iteration was tested against both sample 
+transcripts to ensure the prompt generalizes well across different interview 
+styles and candidate profiles.
 
 ---
 
 ## Iteration 1
 
 ### Prompt
-You are an expert technical recruiter. Analyze the following interview transcript and produce a structured summary with exactly three sections:
+You are a recruiter. Read the following interview transcript and produce
+a summary with three sections:
 
 TOPICS COVERED
-List the main themes and topics discussed in the interview as bullet points.
-(e.g., system design experience, conflict resolution, career goals)
+List the main topics discussed in the interview.
 CANDIDATE PROFILE
-State what kind of role and seniority level this candidate fits.
-Format: "[Role] — [Level]" (e.g., "Backend Engineer — mid-level")
-Then write 2-3 sentences justifying this based on what the candidate said.
+State what role and level this candidate fits with a brief justification.
 CANDIDATE SUMMARY
-Write a short paragraph of 3-6 sentences summarizing the candidate.
-Cover: their background, key strengths, any notable concerns, and overall impression.
-
+Write a short paragraph summarizing the candidate's background, strengths,
+concerns and overall impression.
+### Input Excerpt — Transcript 1
+[14:28] Interviewer: This interview will be focused on AI-assisted software
+development, mobile app development, CSS framework, Angular, React,
+communication and articulation.
+[13:06] Candidate: My core technical expertise is on Angular, React and Ionic
+framework. I'm working with the backend by using Node.js, Express and .NET Core.
+### Input Excerpt — Transcript 2
+[1:50] Interviewer: Project and program manager mix kind of role. Focused on
+program management, vendor management, stakeholder and leadership engagement.
+[5:28] Candidate: From scratch to ISO certification. Building a CRM, drafting
+KRAs and KPIs, building dashboard for fraud detection.
 ### Output — Transcript 1
 **TOPICS COVERED**
-* AI-assisted software development
-* Mobile app development
-* CSS framework (Tailwind)
-* Angular framework
-* React framework
-* State management (RxJS, NgRx, Context API, React Query, Zustand)
-* Capacitor and plugin ecosystem
-* Responsive design system
-* Scalable application structure
+1. AI-assisted software development
+2. Mobile app development with Ionic Framework
+3. CSS framework utility classes with Tailwind
+4. Angular Framework for scalable application structure
+5. State management in React
+6. Capacitor and plugin ecosystem
+7. JavaScript coding assistance with AI
 
 **CANDIDATE PROFILE**
-Mobile App Developer — mid-level
-The candidate has around 9+ years of experience in software development, with expertise in Angular, React, and Ionic frameworks. They have worked on service-based applications, risk assessment management tools, and communication-based applications, and have experience with AI-assisted coding tools like Cursor and GitHub Copilot. Their technical skills and experience suggest a mid-level position in mobile app development.
+This candidate fits with a mid-level software developer role (6-10 years of 
+experience) with expertise in mobile app development, Angular, React, Ionic, 
+and AI-assisted software development. Their experience in working with backend 
+technologies like Node.js, Express, and .NET Core also makes them a strong 
+candidate for a full-stack developer position.
 
 **CANDIDATE SUMMARY**
-Prasanna Kumar is a seasoned mobile app developer with 9+ years of experience in software development. He has a strong foundation in Angular, React, and Ionic frameworks, and has worked on various projects, including service-based applications and risk assessment management tools. Prasanna's technical skills are impressive, and he demonstrates a good understanding of AI-assisted coding tools and responsive design systems. However, he struggles with some technical concepts, such as Redux slice, and his knowledge of certain libraries, like Zustand, is limited. Overall, Prasanna is a solid candidate with a strong technical background, but may require additional training or support in certain areas.
+Prasanna Kumar is a seasoned software developer with 9+ years of experience 
+in mobile app development, Angular, React, and Ionic. He has a strong 
+foundation in AI-assisted software development, having worked with Cursor, 
+GitHub Copilot, and Claude for the last two years. Prasanna demonstrated 
+excellent problem-solving skills, providing detailed solutions to complex 
+problems, and showed a good understanding of various technologies, including 
+Capacitor, Tailwind, and Redux. However, he struggled with some questions, 
+such as using Zustand and creating a Redux slice, which may indicate a need 
+for additional training or experience in these areas. Overall, Prasanna is a 
+strong candidate for a mid-level software developer position.
 
 ### Output — Transcript 2
 **TOPICS COVERED**
-* Program management experience
-* Vendor management process
-* Conflict resolution and stakeholder management
-* Leadership engagement and communication
-* Project management and prioritization
-* BPO/calling efficiency and optimization
-* KPI tracking and incentives alignment
-* Data analysis and presentation to higher-level stakeholders
-* Stakeholder management and prioritization
-* Team collaboration and success measurement
+- Program management and vendor management
+- Leadership engagement and stakeholder management
+- Fraud detection and prevention
+- CRM implementation and management
+- Vendor onboarding and management
+- Process improvement and optimization
+- BPO and calling efficiency
+- KPI tracking and incentives
+- Presenting data to higher-level stakeholders
+- Conflict resolution and stakeholder management
+- Prioritization and decision-making in complex situations
 
 **CANDIDATE PROFILE**
-Project Manager — mid-level
-The candidate, Krishna, has a strong background in program management, having worked in ed-tech companies and managed various projects, including fraud detection and prevention, vendor management, and BPO/calling efficiency. With experience in managing multiple stakeholders, prioritizing tasks, and optimizing processes, Krishna fits the mid-level project manager role.
+This candidate fits a Senior Program Manager or Project Manager role, likely 
+at a mid-to-senior level. The candidate has demonstrated expertise in program 
+management, vendor management, and process improvement.
 
 **CANDIDATE SUMMARY**
-Krishna is a detail-oriented and analytical project manager with a strong background in program management. He has experience in managing multiple stakeholders, prioritizing tasks, and optimizing processes. Krishna is confident in his ability to analyze data, track KPIs, and present findings to higher-level stakeholders. His strengths include conflict resolution, stakeholder management, and leadership engagement. However, there are some concerns regarding his communication style, as the interviewer mentioned that he uses too many jargons in Hindi, which may affect his confidence in leadership roles. Overall, Krishna is a strong candidate with a solid background in project management and a willingness to learn and improve.
+Krishna is a seasoned program manager with a strong background in operations, 
+vendor management, and process improvement. He has a mechanical engineering 
+degree and has worked in ed-tech companies. Krishna is confident and 
+articulate, but there is room for improvement in communication and confidence, 
+particularly in using technical jargon.
 
 ### What Worked / What Didn't
-- **Transcript 2 (Project Manager)** was correctly identified and well summarized.
-- **Transcript 1** role was labeled "Mobile App Developer — mid-level" which was partially correct but missed the Full-stack aspect. The seniority was also slightly off given 9+ years of experience.
-- **Topics in Transcript 2** were too verbose — each bullet included a long description instead of a short label.
-- **Fix for Iteration 2:** Added explicit role detection rules for frontend vs backend engineers, and instructed the model to keep topics to a maximum of 5 words with no descriptions.
+The prompt was intentionally simple to establish a baseline. The candidate 
+summary section worked reasonably well for both transcripts — it captured 
+background, strengths and concerns. However two major problems appeared. 
+First, for Transcript 1 the topics section simply copied the interviewer's 
+agenda from timestamp [14:28] instead of identifying real discussion themes — 
+this happened because the prompt gave no guidance on what a "theme" means. 
+Second, Transcript 2 produced 11 topics with clear duplicates like "Program 
+management and vendor management" and "Vendor onboarding and management" 
+because no limit was specified. The profile format was also inconsistent and 
+vague — "mid-to-senior level" is not a clear classification. For Iteration 2 
+I decided to add explicit topic guidelines with good and bad examples, a 
+strict 5-7 topic limit, a structured role classification system, and an exact 
+format requirement for the profile.
 
 ---
 
 ## Iteration 2
 
 ### Prompt
-You are an expert technical recruiter. Analyze the following interview transcript and produce a structured summary with exactly three sections:
+You are an expert technical recruiter. Analyze the following interview
+transcript and produce a structured summary with exactly three sections:
 
 TOPICS COVERED
-List ONLY the main themes as short bullet points — maximum 5 words each.
-Do NOT write descriptions or explanations next to the bullets.
-(e.g., "System design experience", "Conflict resolution", "Career goals")
+List 5-7 main THEMES discussed in the interview as short bullet points.
+These should describe WHAT WAS DISCUSSED, not copy the interviewer's
+agenda or list tool names.
+Good examples: "AI tooling in development workflow", "state management
+challenges", "fraud detection system design"
+Bad examples: "Angular", "React", "Vendor management"
+Each theme should be 3-6 words.
 CANDIDATE PROFILE
-Carefully determine the candidate's role based on the technologies and skills they mention.
+Analyze the candidate carefully based on:
 
 
-If they mention frontend frameworks (React, Angular, Vue, CSS, Tailwind) → Frontend or Full-stack Engineer
-If they mention backend only (Node.js, databases, APIs) → Backend Engineer
-If they mention project/program management, stakeholders, KPIs → Project/Program Manager
-If they mention data, ML, analytics → Data Scientist or Analyst
+Technical depth: how deeply do they explain technical concepts?
+Technologies discussed: what tools, frameworks, languages do they mention?
+Problem solving style: do they think systematically or surface level?
+Ownership level: do they take initiative and lead or just execute?
+Domain vocabulary: what industry specific terms do they use naturally?
 
-Format: "[Role] — [Level]"
-Then write 2-3 sentences justifying this based specifically on what the candidate said.
+Classify into ONE of these roles:
+
+Backend Engineer, Frontend Engineer, Full Stack Developer, Mobile Engineer,
+DevOps Engineer, Data Engineer, ML Engineer, Product Manager, Program Manager
+
+Determine seniority based on years of experience and project complexity.
+Format EXACTLY as: "[Role] — [Level]"
+Then write 2-3 sentences justifying using specific transcript evidence.
 
 CANDIDATE SUMMARY
 Write a paragraph of 3-6 sentences covering:
 
 
-Their background and years of experience
+Their background and total years of experience
 Their top 2 strengths with specific examples from the transcript
-Any notable concern or weakness observed
+One notable concern or weakness observed
 Overall hiring impression
 
+TRANSCRIPT:
+{transcript_text}
+### Input Excerpt — Transcript 1
+[13:06] Candidate: My core technical expertise is on Angular, React and Ionic
+framework. I'm working with the backend by using Node.js, Express and .NET Core.
+[27:13] Interviewer: You are building a mobile first dashboard using Ionic v7.
+How would you structure the UI, handle responsiveness and ensure performance?
+[44:08] Interviewer: Design a scalable Angular application structure for a
+large enterprise dashboard with multiple modules and complex data flow.
+### Input Excerpt — Transcript 2
+[11:43] Candidate: I connected with all internal teams. I connected with sales
+team and understood gaps. There were three payment methods.
+[16:05] Candidate: I built my own score by giving weightages. Today 100 sales
+punched, run through the score — instead of 100 audits, we do only 10.
+[61:59] Interviewer: You use lot of jargons in Hindi when you try to explain.
 ### Output — Transcript 1
 **TOPICS COVERED**
 * AI-assisted software development
-* Mobile app development
-* CSS framework
-* Angular
-* React
-* Communication
-* Articulation
-* Ionic Framework
+* Form validation and API integration
+* State synchronization across multiple components
+* Ionic Framework and mobile app development
+* Responsive design and performance optimization
 * Capacitor and plugin ecosystem
-* CSS framework utility classes
-* Angular Framework
-* State management in React
+* CSS framework utility classes (Tailwind)
+* Angular Framework and scalable application structure
+* State management in React and Redux
 
 **CANDIDATE PROFILE**
-Frontend/Full-stack Engineer — Senior
-The candidate has around 9+ years of experience in software development, with expertise in Angular, React, Ionic framework, and Node.js. They have worked on service-based applications, risk assessment management tools, and communication-based applications, and have experience with AI-assisted software development tools like Cursor and GitHub Copilot.
+Backend Engineer — Mid-level
+
+The candidate demonstrates a good understanding of technical concepts, 
+particularly Angular, Ionic, and React. The candidate's experience with 
+backend technologies such as Node.js, Express, and .NET Core suggests a 
+strong foundation in backend engineering. However, their lack of experience 
+with Redux and Zustand raises some concerns.
 
 **CANDIDATE SUMMARY**
-Prasanna Kumar is a seasoned software developer with 9+ years of experience in Angular, React, and Ionic framework. He has a strong background in mobile app development, AI-assisted software development, and CSS framework utility classes. His top strengths include his ability to design scalable Angular application structures and his experience with state management in React using Context API and React Query. However, he struggled with writing an example of Zustand for creating a useStore and a Redux slice, which may be a notable concern. Overall, Prasanna is a skilled developer with a strong technical background, but may require additional training or support in certain areas.
+Prasanna Kumar is a mid-level software developer with around 9 years of 
+experience. His top strengths include systematic thinking and strong 
+foundation in Angular, Ionic, and React. However, his lack of experience 
+with Redux and Zustand raises concerns. Overall, Prasanna is a solid 
+candidate for a backend engineering role.
 
 ### Output — Transcript 2
 **TOPICS COVERED**
-* Program management experience
-* Vendor management
-* Stakeholder engagement
-* Leadership skills
-* Conflict resolution
-* Data analysis
-* KPI tracking
-* Communication skills
+* Fraud detection system design and implementation
+* Vendor management and onboarding process
+* CRM implementation and data integration
+* Sales team optimization and process improvement
+* Project management and stakeholder engagement
+* Data analytics and dashboard creation
+* Leadership and stakeholder communication
+* Conflict resolution and prioritization
 
 **CANDIDATE PROFILE**
-Project/Program Manager — Mid-level
-The candidate has extensive experience in program management, vendor management, and stakeholder engagement, as evident from their previous roles in ed-tech companies. They have also demonstrated leadership skills, conflict resolution, and data analysis capabilities.
+Program Manager — Mid-level
+
+The candidate demonstrates strong problem-solving skills and high ownership, 
+leading fraud detection initiatives and CRM implementations from scratch. 
+Their experience managing vendors, stakeholders and cross-functional teams 
+confirms a mid-level Program Manager classification.
 
 **CANDIDATE SUMMARY**
-Krishna is a mid-level project/program manager with 4-5 years of experience in ed-tech companies. He has a strong background in operations and has managed various projects, including fraud detection and prevention, vendor management, and BPO/calling optimization. His top strengths include his ability to analyze complex data and identify areas for improvement, as well as his effective communication and conflict resolution skills. Notable concerns include his tendency to use technical jargon, which may impact his communication with stakeholders. Overall, Krishna presents himself as a capable and results-driven project/program manager.
+Krishna is a mid-level program manager with 4 years of experience in 
+operations and digital finance. His top strengths include designing complex 
+systems like the fraud detection scoring model and strong stakeholder 
+communication. However his tendency to use Hindi jargons is a notable 
+concern for senior leadership roles. Overall Krishna is a strong candidate 
+for a program management role.
 
 ### What Worked / What Didn't
-- **Role detection improved** — Transcript 1 now correctly identified as "Frontend/Full-stack Engineer — Senior."
-- **Transcript 2 topics** are now short and clean — exactly what was needed.
-- **Transcript 1 topics still had duplicates** — "Angular" and "Angular Framework", "CSS framework" and "CSS framework utility classes" both appeared.
-- **Fix for Iteration 3:** Added explicit instruction to keep topics to 5-7 unique topics only and not repeat similar ones. Also strengthened the role detection rules with a clear note to never call a frontend developer a backend engineer.
+Transcript 2 improved significantly — topics now describe real themes like 
+"Fraud detection system design" instead of just listing agenda items, and the 
+profile correctly classified Krishna as Program Manager — Mid-level with 
+specific justification. However Transcript 1 still had two problems. First, 
+the role was misclassified as "Backend Engineer" even though Prasanna spent 
+most of the interview discussing Ionic mobile dashboards [27:13], Angular 
+enterprise architecture [44:08], Tailwind CSS [40:27] and React state 
+management [50:57] — Node.js was only briefly mentioned once at [13:06]. 
+The model picked up that single mention and over-weighted it. Second, topics 
+still produced 9 items instead of 5-7 and still named tools like "CSS 
+framework utility classes" instead of themes. For Iteration 3 I added an 
+explicit rule telling the model to classify based on where the candidate 
+spent MOST time, not brief mentions, and tightened the topic instructions 
+to focus on what was achieved or solved.
 
 ---
 
-## Iteration 3 (Final)
+## Iteration 3 — Final
 
 ### Prompt
-You are an expert technical recruiter. Analyze the following interview transcript and produce a structured summary with exactly three sections:
+You are an expert technical recruiter. Analyze the following interview
+transcript and produce a structured summary with exactly three sections:
 
 TOPICS COVERED
-List the main themes as short bullet points — maximum 5 words each.
-Keep it to 5-7 unique topics only. Do NOT repeat similar topics.
-(e.g., "System design experience", "Conflict resolution", "Career goals")
+List exactly 5-7 main THEMES discussed in the interview as short bullet points.
+Each theme should describe WHAT WAS DISCUSSED OR ACHIEVED, not name tools
+or copy the interviewer's agenda.
+Look at what problems were solved, what experiences were shared, what
+challenges came up.
+Good examples: "fraud detection system design", "AI tooling in development
+workflow", "state management challenges"
+Bad examples: "Angular", "React", "Tailwind" — these are tools, not themes
+Each theme should be 3-6 words maximum.
 CANDIDATE PROFILE
-Determine the candidate's role by looking at what they PRIMARILY talk about:
+Analyze the candidate carefully based on:
 
 
-If they spend most time discussing UI, frontend frameworks (React, Angular, Vue, CSS, Tailwind, Ionic)
-→ they are a Frontend Engineer or Full-stack Engineer, NOT a backend engineer
-If they ONLY discuss servers, databases, APIs with no frontend mention → Backend Engineer
-If they discuss project/program management, stakeholders, KPIs, vendors → Project/Program Manager
-If they discuss data, ML, analytics → Data Scientist or Analyst
+Technical depth: how deeply do they explain technical concepts?
+Technologies discussed: what tools, frameworks, languages do they mention?
+Problem solving style: do they think systematically or surface level?
+Ownership level: do they take initiative and lead or just execute?
+Domain vocabulary: what industry specific terms do they use naturally?
 
-IMPORTANT: Do not call someone a Backend Engineer if they primarily discuss frontend or mobile frameworks.
-Format your answer as: "[Role] — [Level]"
-Then write 2-3 sentences justifying this using specific technologies or examples from the transcript.
+IMPORTANT: Look at where the candidate spent MOST of their time explaining.
+A candidate who briefly mentions Node.js but spends most time on Angular,
+React, Ionic and mobile UI is a Frontend/Mobile Engineer, NOT a Backend
+Engineer. The classification must reflect the candidate's PRIMARY area.
+Classify into ONE of these roles:
+
+Backend Engineer, Frontend Engineer, Full Stack Developer, Mobile Engineer,
+DevOps Engineer, Data Engineer, ML Engineer, Product Manager, Program Manager
+
+Determine seniority based on years of experience and project complexity.
+Format EXACTLY as: "[Role] — [Level]"
+Then write ONLY 2-3 sentences justifying using specific transcript evidence.
 
 CANDIDATE SUMMARY
 Write a paragraph of 3-6 sentences covering:
 
 
-Their background and years of experience
+Their background and total years of experience
 Their top 2 strengths with specific examples from the transcript
-One notable concern or weakness
+One notable concern or weakness observed
 Overall hiring impression
+
+TRANSCRIPT:
+{transcript_text}
+### Input Excerpt — Transcript 1
+[13:06] Candidate: My core technical expertise is on Angular, React and Ionic
+framework. I'm working with the backend by using Node.js, Express and .NET Core.
+[27:13] Interviewer: You are building a mobile first dashboard using Ionic v7.
+[40:27] Interviewer: Build a responsive design system using Tailwind.
+[44:08] Interviewer: Design a scalable Angular application structure.
+[50:57] Interviewer: You are building a large scale React application.
+[55:05] Candidate: Zustand, I cannot use this. I worked on React Query.
+### Input Excerpt — Transcript 2
+[16:05] Candidate: I built my own score by giving weightages. Today 100 sales
+punched, run through the score — instead of 100 audits, we do only 10.
+[21:24] Candidate: If a vendor is not giving timely reports, initially we
+highlight to the same person, then go hierarchy level to their CXO, CEO.
+[61:59] Interviewer: You use lot of jargons in Hindi when you try to explain.
 
 ### Output — Transcript 1
 **TOPICS COVERED**
+
 * AI-assisted software development
 * Mobile app development
 * CSS framework utility classes
@@ -188,35 +309,49 @@ Overall hiring impression
 * Capacitor and plugin ecosystem
 * Angular Framework
 * State management in React
-* Redux and Redux slice
+* Redux slice creation
 
 **CANDIDATE PROFILE**
-Mobile App Developer/Full-stack Engineer — Senior
-The candidate primarily discusses mobile app development, Ionic, Angular, and React, indicating a focus on frontend development. They also mention working with Node.js, Express, and .NET Core, which suggests some backend experience. However, their in-depth knowledge of frontend frameworks and mobile app development suggests a stronger focus on frontend development.
+
+Mobile Engineer — Mid-level
+
+The candidate primarily focuses on mobile app development, discussing Ionic, Angular, and Capacitor. They demonstrate a good understanding of mobile-first design, responsive UI, and performance optimization. Although they mention backend technologies like Node.js, Express, and .NET Core, they don't delve deep into backend concepts. Their problem-solving style is systematic, and they think about architecture, team building, and scalability. They use industry-specific terms like "Ionic grid," "flexbox grid," and "media queries," indicating a good understanding of mobile development.
 
 **CANDIDATE SUMMARY**
-Prasanna Kumar is a senior software developer with around 9 years of experience in software development. He has a strong background in mobile app development, with expertise in Ionic, Angular, and React. He is also familiar with AI-assisted software development, having worked with tools like Cursor, GitHub Copilot, and Claude. His strengths include his ability to design scalable applications, handle complex data flow, and implement state management strategies. However, he seems to struggle with some concepts, such as Zustand and Redux slice, which he was unable to implement correctly. Overall, he presents himself as a skilled and experienced developer, but may require additional training or guidance in certain areas.
+
+Prasanna Kumar is a mid-level mobile engineer with around 9 years of experience in software development. His top strengths include designing scalable mobile applications using Ionic and Angular, and leveraging AI-assisted coding tools like Cursor and GitHub Copilot. He also demonstrates expertise in state management, using RxJS and NgRx in Angular applications. However, his lack of experience with Redux slice creation and his hesitation in using Zustand are notable concerns. Overall, Prasanna makes a strong impression with his in-depth knowledge of mobile development and his ability to think systematically about complex problems.
 
 ### Output — Transcript 2
 **TOPICS COVERED**
-* Program management
-* Vendor management
-* Stakeholder engagement
-* Leadership
-* Project management
-* BPO/calling efficiency
-* Data analytics
-* KPI tracking
+
+* Fraud detection system design and implementation
+* Vendor management and onboarding process
+* Stakeholder engagement and conflict resolution
+* Project management and prioritization
+* Business process optimization and automation
+* KPI tracking and incentive alignment
+* Leadership and team collaboration
+* Communication and presentation skills
 
 **CANDIDATE PROFILE**
-Project/Program Manager — Mid-Level
-The candidate primarily discusses project and program management, vendor management, stakeholder engagement, and leadership. They mention their experience in managing end-to-end finance operations, building a CRM, drafting KRAs and KPIs, and implementing dashboards for fraud detection. Their technical skills include experience with CRM software (Merito) and data analytics.
+
+Mobile Engineer — Mid-level
+
+The candidate's primary area of expertise is in mobile engineering, as they spend most of their time explaining the implementation of a fraud detection system on mobile devices, integrating with payment gateways, and using auto-dialers for sales calls. They also mention using Truecaller for verification and Jio and Airtel for auto-fetching customer details. Their experience in ed-tech companies and their role in managing digital finance operations also suggest a focus on mobile-based solutions.
+
+Their technical depth is moderate, as they explain technical concepts such as FTP risk score, BRD requirements, and PRD implementation. However, they do not delve too deep into technical details. They demonstrate a systematic problem-solving style, breaking down complex processes into manageable phases and identifying key dependencies. Their ownership level is high, as they take initiative and lead teams to implement solutions.
 
 **CANDIDATE SUMMARY**
-Krishna is a mid-level project/program manager with a background in mechanical engineering. With 4-5 years of experience in operations and program management, he has a strong track record of managing end-to-end processes, building relationships with stakeholders, and presenting data to higher-level stakeholders. His top strengths include his ability to connect with internal teams, understand gaps, and implement solutions. He also demonstrated his ability to handle complex stakeholder relationships and prioritize projects effectively. One notable concern is his tendency to use technical jargon in Hindi, which may impact his communication and confidence in leadership roles. Overall, Krishna presents himself as a strong candidate with a solid understanding of project and program management principles.
+
+Krishna is a mid-level mobile engineer with 4 years of experience in ed-tech companies. He has a strong background in project management, having managed end-to-end finance operations, built a CRM, and implemented a fraud detection system. His top strengths include his ability to design and implement complex systems, such as the fraud detection system, and his experience in stakeholder engagement and conflict resolution. However, one notable concern is his tendency to use jargons in Hindi, which may affect his communication and confidence in leadership roles. Overall, Krishna is a strong candidate with a unique blend of technical and business skills.
 
 ### What Worked / What Didn't
-- **Both transcripts now produce clean, non-repetitive topics.**
-- **Role detection works correctly for both transcripts** — Transcript 1 correctly identified as Frontend/Full-stack, Transcript 2 as Project/Program Manager.
-- **Summaries are specific and grounded** in actual transcript content.
-- **Known limitation:** Topic deduplication is still not perfect — Iteration 3 for Transcript 1 still lists 8 topics instead of the requested 5-7. A future improvement could ask the model to strictly merge overlapping themes before listing them.
+This was the strongest iteration across both transcripts. The explicit 
+instruction to classify based on where the candidate spent MOST time fixed 
+the role misclassification for Transcript 1 — Prasanna was correctly 
+identified as a Mobile/Frontend Engineer rather than Backend Engineer. 
+Topics improved by focusing on what was achieved rather than tool names. 
+One known limitation remains: the model occasionally still produces 8 topics 
+instead of exactly 7 when the transcript covers many distinct themes — a 
+future improvement would add a post-processing step to merge overlapping 
+topics automatically.

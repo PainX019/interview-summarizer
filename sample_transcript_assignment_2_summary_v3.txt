@@ -1,0 +1,22 @@
+**TOPICS COVERED**
+
+* Fraud detection system design and implementation
+* Vendor management and onboarding process
+* Stakeholder engagement and conflict resolution
+* Project management and prioritization
+* Business process optimization and automation
+* KPI tracking and incentive alignment
+* Leadership and team collaboration
+* Communication and presentation skills
+
+**CANDIDATE PROFILE**
+
+Mobile Engineer — Mid-level
+
+The candidate's primary area of expertise is in mobile engineering, as they spend most of their time explaining the implementation of a fraud detection system on mobile devices, integrating with payment gateways, and using auto-dialers for sales calls. They also mention using Truecaller for verification and Jio and Airtel for auto-fetching customer details. Their experience in ed-tech companies and their role in managing digital finance operations also suggest a focus on mobile-based solutions.
+
+Their technical depth is moderate, as they explain technical concepts such as FTP risk score, BRD requirements, and PRD implementation. However, they do not delve too deep into technical details. They demonstrate a systematic problem-solving style, breaking down complex processes into manageable phases and identifying key dependencies. Their ownership level is high, as they take initiative and lead teams to implement solutions.
+
+**CANDIDATE SUMMARY**
+
+Krishna is a mid-level mobile engineer with 4 years of experience in ed-tech companies. He has a strong background in project management, having managed end-to-end finance operations, built a CRM, and implemented a fraud detection system. His top strengths include his ability to design and implement complex systems, such as the fraud detection system, and his experience in stakeholder engagement and conflict resolution. However, one notable concern is his tendency to use jargons in Hindi, which may affect his communication and confidence in leadership roles. Overall, Krishna is a strong candidate with a unique blend of technical and business skills.

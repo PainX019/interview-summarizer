@@ -1,0 +1,22 @@
+**TOPICS COVERED**
+
+* Fraud detection system design and implementation
+* Vendor management and onboarding process
+* CRM implementation and data integration
+* Sales team optimization and process improvement
+* Project management and stakeholder engagement
+* Data analytics and dashboard creation
+* Leadership and stakeholder communication
+* Conflict resolution and prioritization
+
+**CANDIDATE PROFILE**
+
+Based on the analysis, I classify the candidate as a **Program Manager** — **Mid-level**.
+
+The candidate demonstrates a good understanding of technical concepts, such as CRM implementation, data integration, and fraud detection system design. They also show a strong problem-solving style, breaking down complex problems into manageable phases and identifying key stakeholders. However, their technical depth is not as strong as a technical lead or architect, and they rely on external expertise, such as Experian and CIBIL, to support their initiatives.
+
+The candidate's experience in program management, vendor management, and stakeholder engagement is evident, and they demonstrate a high level of ownership and initiative. They have led teams and worked individually, and their experience in handling complex projects and stakeholders is impressive.
+
+**CANDIDATE SUMMARY**
+
+Krishna is a mid-level program manager with 4 years of experience in operations, digital finance, and fraud detection. He has a strong background in process improvement, vendor management, and stakeholder engagement. His top strengths include his ability to design and implement complex systems, such as the fraud detection system, and his strong communication skills, which enable him to effectively engage with stakeholders and resolve conflicts. However, his reliance on external expertise and his limited technical depth are notable concerns. Overall, Krishna is a strong candidate for a program management role, and his experience and skills make him a valuable asset to any organization.

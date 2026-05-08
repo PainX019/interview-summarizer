@@ -1,0 +1,20 @@
+**TOPICS COVERED**
+
+* AI-assisted software development
+* Mobile app development
+* CSS framework utility classes
+* Ionic Framework
+* Capacitor and plugin ecosystem
+* Angular Framework
+* State management in React
+* Redux slice creation
+
+**CANDIDATE PROFILE**
+
+Mobile Engineer — Mid-level
+
+The candidate primarily focuses on mobile app development, discussing Ionic, Angular, and Capacitor. They demonstrate a good understanding of mobile-first design, responsive UI, and performance optimization. Although they mention backend technologies like Node.js, Express, and .NET Core, they don't delve deep into backend concepts. Their problem-solving style is systematic, and they think about architecture, team building, and scalability. They use industry-specific terms like "Ionic grid," "flexbox grid," and "media queries," indicating a good understanding of mobile development.
+
+**CANDIDATE SUMMARY**
+
+Prasanna Kumar is a mid-level mobile engineer with around 9 years of experience in software development. His top strengths include designing scalable mobile applications using Ionic and Angular, and leveraging AI-assisted coding tools like Cursor and GitHub Copilot. He also demonstrates expertise in state management, using RxJS and NgRx in Angular applications. However, his lack of experience with Redux slice creation and his hesitation in using Zustand are notable concerns. Overall, Prasanna makes a strong impression with his in-depth knowledge of mobile development and his ability to think systematically about complex problems.

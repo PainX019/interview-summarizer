@@ -20,28 +20,52 @@ def summarize_transcript(transcript_text):
 You are an expert technical recruiter. Analyze the following interview transcript and produce a structured summary with exactly three sections:
 
 1. TOPICS COVERED
-List the main themes as short bullet points — maximum 5 words each.
-Keep it to 5-7 unique topics only. Do NOT repeat similar topics.
-(e.g., "System design experience", "Conflict resolution", "Career goals")
+List exactly 5-7 main THEMES discussed in the interview as short bullet points.
+Each theme should describe WHAT WAS DISCUSSED OR ACHIEVED, not name tools or copy the interviewer's agenda.
+Look at what problems were solved, what experiences were shared, what challenges came up.
+Good examples: "fraud detection system design", "AI tooling in development workflow", "state management challenges"
+Bad examples: "Angular", "React", "Tailwind" — these are tools, not themes
+Each theme should be 3-6 words maximum.
 
 2. CANDIDATE PROFILE
-Determine the candidate's role by looking at what they PRIMARILY talk about:
-- If they spend most time discussing UI, frontend frameworks (React, Angular, Vue, CSS, Tailwind, Ionic) 
-  → they are a Frontend Engineer or Full-stack Engineer, NOT a backend engineer
-- If they ONLY discuss servers, databases, APIs with no frontend mention → Backend Engineer
-- If they discuss project/program management, stakeholders, KPIs, vendors → Project/Program Manager
-- If they discuss data, ML, analytics → Data Scientist or Analyst
+Analyze the candidate carefully based on:
+- Technical depth: how deeply do they explain technical concepts?
+- Technologies discussed: what tools, frameworks, languages do they mention?
+- Problem solving style: do they think systematically or surface level?
+- Ownership level: do they take initiative and lead or just execute?
+- Domain vocabulary: what industry specific terms do they use naturally?
 
-IMPORTANT: Do not call someone a Backend Engineer if they primarily discuss frontend or mobile frameworks.
+IMPORTANT: Look at where the candidate spent MOST of their time explaining.
+A candidate who briefly mentions Node.js but spends most time on Angular, React, 
+Ionic and mobile UI is a Frontend/Mobile Engineer, NOT a Backend Engineer.
+The classification must reflect the candidate's PRIMARY area of expertise.
 
-Format your answer as: "[Role] — [Level]"
-Then write 2-3 sentences justifying this using specific technologies or examples from the transcript.
+Classify the candidate into ONE of these roles:
+- Backend Engineer
+- Frontend Engineer
+- Full Stack Developer
+- Mobile Engineer
+- DevOps Engineer
+- Data Engineer
+- ML Engineer
+- Product Manager
+- Program Manager
+
+Determine seniority level based on:
+- Total years of industry experience mentioned
+- Complexity of projects handled
+- Whether they lead teams or just execute tasks
+
+Format EXACTLY as: "[Role] — [Level]"
+Example: "Mobile Engineer — Senior" or "Program Manager — Mid-level"
+
+Then write ONLY 2-3 sentences justifying using specific evidence from the transcript.
 
 3. CANDIDATE SUMMARY
 Write a paragraph of 3-6 sentences covering:
-- Their background and years of experience
+- Their background and total years of experience
 - Their top 2 strengths with specific examples from the transcript
-- One notable concern or weakness
+- One notable concern or weakness observed
 - Overall hiring impression
 
 ---
