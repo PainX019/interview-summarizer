@@ -1,0 +1,20 @@
+**TOPICS COVERED**
+
+* AI-assisted software development
+* Mobile app development
+* CSS framework utility classes
+* Ionic Framework
+* Capacitor and plugin ecosystem
+* Angular Framework
+* State management in React
+* Redux and Redux slice
+
+**CANDIDATE PROFILE**
+
+Mobile App Developer/Full-stack Engineer — Senior
+
+The candidate primarily discusses mobile app development, Ionic, Angular, and React, indicating a focus on frontend development. They also mention working with Node.js, Express, and .NET Core, which suggests some backend experience. However, their in-depth knowledge of frontend frameworks and mobile app development suggests a stronger focus on frontend development.
+
+**CANDIDATE SUMMARY**
+
+Prasanna Kumar is a senior software developer with around 9 years of experience in software development. He has a strong background in mobile app development, with expertise in Ionic, Angular, and React. He is also familiar with AI-assisted software development, having worked with tools like Cursor, GitHub Copilot, and Claude. His strengths include his ability to design scalable applications, handle complex data flow, and implement state management strategies. However, he seems to struggle with some concepts, such as Zustand and Redux slice, which he was unable to implement correctly. Overall, he presents himself as a skilled and experienced developer, but may require additional training or guidance in certain areas.

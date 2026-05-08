@@ -1,0 +1,21 @@
+**TOPICS COVERED**
+
+* AI-assisted software development
+* Mobile app development
+* CSS framework (Tailwind)
+* Angular framework
+* React framework
+* State management (RxJS, NgRx, Context API, React Query, Zustand)
+* Capacitor and plugin ecosystem
+* Responsive design system
+* Scalable application structure
+
+**CANDIDATE PROFILE**
+
+Mobile App Developer — mid-level
+
+The candidate has around 9+ years of experience in software development, with expertise in Angular, React, and Ionic frameworks. They have worked on service-based applications, risk assessment management tools, and communication-based applications, and have experience with AI-assisted coding tools like Cursor and GitHub Copilot. Their technical skills and experience suggest a mid-level position in mobile app development.
+
+**CANDIDATE SUMMARY**
+
+Prasanna Kumar is a seasoned mobile app developer with 9+ years of experience in software development. He has a strong foundation in Angular, React, and Ionic frameworks, and has worked on various projects, including service-based applications and risk assessment management tools. Prasanna's technical skills are impressive, and he demonstrates a good understanding of AI-assisted coding tools and responsive design systems. However, he struggles with some technical concepts, such as Redux slice, and his knowledge of certain libraries, like Zustand, is limited. Overall, Prasanna is a solid candidate with a strong technical background, but may require additional training or support in certain areas.
