@@ -352,17 +352,14 @@ Prasanna was now identified as Mobile Engineer instead of Backend Engineer,
 because the new rule told the model to classify based on where the candidate 
 spent MOST time rather than brief mentions. Topics for Transcript 1 also 
 improved slightly. However this iteration introduced a regression in 
-Transcript 2 — Krishna was incorrectly classified as Mobile Engineer instead 
-of Program Manager. This happened because the rule "classify based on where 
-candidate spent most time" caused the model to focus on the mobile tools 
-Krishna mentioned — Truecaller, Jio, Airtel, payment gateways — without 
-understanding that he was a Program Manager who used those tools, not an 
-engineer who built them. This is a key lesson in prompt engineering — fixing 
-one problem can break another. A future improvement would use a two-step 
-prompt: first identify whether the candidate is a technical engineer or a 
-business/operations role, then classify within that category. This would 
-prevent tools mentioned in a business context from being confused with 
-technical expertise.
+Transcript 2 — Krishna was incorrectly classified as Mobile Engineer instead of Program 
+Manager. This happened because Krishna frequently discussed phone numbers, 
+auto dialers, and mobile-based integrations in the context of his fraud 
+detection work. The model confused "business processes involving phones" 
+with "mobile app development" — showing that the priority rule worked too 
+broadly. It correctly identified volume of discussion but failed to 
+distinguish between a candidate who BUILDS mobile apps versus one who 
+USES phone-based services as a business tool.
 
 ---
 
