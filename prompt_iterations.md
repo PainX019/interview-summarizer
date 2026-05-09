@@ -345,13 +345,35 @@ Their technical depth is moderate, as they explain technical concepts such as FT
 
 Krishna is a mid-level mobile engineer with 4 years of experience in ed-tech companies. He has a strong background in project management, having managed end-to-end finance operations, built a CRM, and implemented a fraud detection system. His top strengths include his ability to design and implement complex systems, such as the fraud detection system, and his experience in stakeholder engagement and conflict resolution. However, one notable concern is his tendency to use jargons in Hindi, which may affect his communication and confidence in leadership roles. Overall, Krishna is a strong candidate with a unique blend of technical and business skills.
 
+
 ### What Worked / What Didn't
-This was the strongest iteration across both transcripts. The explicit 
-instruction to classify based on where the candidate spent MOST time fixed 
-the role misclassification for Transcript 1 — Prasanna was correctly 
-identified as a Mobile/Frontend Engineer rather than Backend Engineer. 
-Topics improved by focusing on what was achieved rather than tool names. 
-One known limitation remains: the model occasionally still produces 8 topics 
-instead of exactly 7 when the transcript covers many distinct themes — a 
-future improvement would add a post-processing step to merge overlapping 
-topics automatically.
+Iteration 3 correctly fixed the role misclassification for Transcript 1 — 
+Prasanna was now identified as Mobile Engineer instead of Backend Engineer, 
+because the new rule told the model to classify based on where the candidate 
+spent MOST time rather than brief mentions. Topics for Transcript 1 also 
+improved slightly. However this iteration introduced a regression in 
+Transcript 2 — Krishna was incorrectly classified as Mobile Engineer instead 
+of Program Manager. This happened because the rule "classify based on where 
+candidate spent most time" caused the model to focus on the mobile tools 
+Krishna mentioned — Truecaller, Jio, Airtel, payment gateways — without 
+understanding that he was a Program Manager who used those tools, not an 
+engineer who built them. This is a key lesson in prompt engineering — fixing 
+one problem can break another. A future improvement would use a two-step 
+prompt: first identify whether the candidate is a technical engineer or a 
+business/operations role, then classify within that category. This would 
+prevent tools mentioned in a business context from being confused with 
+technical expertise.
+
+---
+
+## Key Learnings
+
+| Iteration | Core Problem | Fix Applied | Unintended Effect |
+|---|---|---|---|
+| 1 → 2 | Topics copied agenda, profile format vague | Added explicit rules, examples, format | Topics still had tool names for T1 |
+| 2 → 3 | Role misclassified due to single mention | Added priority rule — classify by most time spent | Caused regression in T2 role |
+
+**Overall lesson:** Prompt engineering is not a straight line toward 
+perfection. Every rule you add removes one assumption but may introduce 
+another. Documenting these regressions honestly is as valuable as 
+documenting improvements.
